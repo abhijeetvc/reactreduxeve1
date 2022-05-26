@@ -12,7 +12,7 @@ export const addCounter=()=>{
     }
 }
 
-export const reduceCounter=({
+export const reduceCounter=()=>({
     type:actionType.REDUCE_COUNTER,
     payload:1
 })
