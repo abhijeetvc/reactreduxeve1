@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="registerForm">
+        <label>FirstName : </label>
+        <input type="text" id="firstName"/>
+
+        <label>LastName : </label>
+        <input type="text" id="lastName"/>
+
+        <label>Email : </label>
+        <input type="email" id="email"/>
+
+        <label>Password : </label>
+        <input type="password" id="password"/>
+
+        <button type="button" onclick="saveData()">Register</button>
+
+       
+
+    </form>
+
+    <button type="button" onclick="readData()">Show Data</button>
+
+    <script>
+        function saveData(){
+            let fName=document.getElementById("firstName").value 
+            let lName=document.getElementById("lastName").value 
+            let email=document.getElementById("email").value 
+            let password=document.getElementById("password").value 
+
+            let registerObj=JSON.stringify({
+                        firstName:fName,
+                        lastName:lName,
+                        email:email,
+                        password:password
+            })
+
+            console.log(registerObj);
+            localStorage.setItem('data',registerObj)
+        }
+
+        function readData(){
+            let data=localStorage.getItem('data')
+            console.log(data);
+        }
+    </script>
+
+</body>
+</html>
